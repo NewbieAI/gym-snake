@@ -1,12 +1,7 @@
 # gym-snake
 Implementation of gym environment for classic Snake game
 
-gym-snake repo
 September 21st, 2018
-
-
-- Contains a Snake environment that uses OpenAI gym's common interface
-- Implements the Classic game of Snake
 
 Snake:
 
@@ -19,4 +14,14 @@ Snake:
 Snake receives +1 reward when eats a piece of food, 0 if goes to an empty grid.
 Upon death (happens when snake runs into its own body or runs into the boundaries), snake receives 
 a penalty of -5 reward, which is designed to train the agent to avoid dying early on.
+
+The game state is represented by a 15x20 numpy array that is updated every step.
+Pyglet package is used to render the game in 'human' mode. The render mode does not
+support video generation yet. But the 'replay' mode allows you to save the game (initial state + complete action history),
+which can be used later to generate videos if desired.
+
+To see what the environment does, setup the environment then run playSnake.py.
+Left arrow key tells the snake to turn left, Right arrow key tells the snake to turn right.
+The default action is to continue straight ahead. The game will have prompt you to choose from
+3 different speeds at the beginning.
 
